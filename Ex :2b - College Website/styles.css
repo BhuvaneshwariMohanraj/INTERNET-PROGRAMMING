@@ -1,0 +1,89 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.register-button {
+    margin-left: 45%;
+    text-decoration: none;
+    color: #fff;
+    background-color: #a60fa3cb; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.register-button:hover {
+    background-color: #d706d7; /
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.container {
+    display: flexbox;
+    align-items: center;
+    justify-content: space-between; 
+    margin: 0 auto;
+}
+.container img {
+    width: 500px;
+    height: 100px; /* Adjust as needed */
+    margin-right: 1000px; /* Add some space between image and text */
+    margin: 0 auto;
+}
+.navigation a{
+    margin: 2%;
+    color: #a60fa3cb;
+    text-decoration: none;
+    margin-right: 40px;
+    transition: .3s;
+    font-weight: 500;
+    
+}
+.navigation a:hover{
+    color:#c00bf3 ;
+}
+.front-img {
+    height: 100vh;
+    background: url('rec-main.jpeg') no-repeat center center;
+    background-size: cover;
+}
+.about, .academics , .facilities , .research {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.abt-image img{
+
+    height: 400px;
+    width: 600px;
+
+}
+.content {
+    flex: 0;
+}
+.courses-container {
+    width: 300px; /* Adjust as needed */
+  }
+  
+  .courses-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .course-item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .course-item:hover {
+    background-color: #b811a4a9; /* Change to desired hover color */
+    color: #fff; /* Change text color on hover */
+  }
