@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration Form</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.875em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 8px;
+            vertical-align: top;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            // Clear previous error messages
+            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+
+            // Validate student name
+            const studentName = document.getElementById('student_name').value;
+            if (studentName === '' || !/^[a-zA-Z\s]+$/.test(studentName)) {
+                document.getElementById('name_error').textContent = 'Valid Student Name is required (only letters and spaces).';
+                isValid = false;
+            }
+
+            // Validate roll number
+            const rollNo = document.getElementById('rollno').value;
+            if (rollNo === '' || !/^\d{4,}$/.test(rollNo)) {
+                document.getElementById('rollno_error').textContent = 'Valid Roll Number is required.';
+                isValid = false;
+            }
+
+            // Validate gender
+            const gender = document.querySelector('input[name="gender"]:checked');
+            if (!gender) {
+                document.getElementById('gender_error').textContent = 'Gender is required.';
+                isValid = false;
+            }
+
+            // Validate year
+            const year = document.getElementById('year').value;
+            if (year === '') {
+                document.getElementById('year_error').textContent = 'Year is required.';
+                isValid = false;
+            }
+
+            // Validate department
+            const department = document.getElementById('department').value;
+            if (department === '') {
+                document.getElementById('department_error').textContent = 'Department is required.';
+                isValid = false;
+            }
+
+            // Validate section
+            const section = document.getElementById('section').value;
+            if (section === '') {
+                document.getElementById('section_error').textContent = 'Section is required.';
+                isValid = false;
+            }
+
+            // Validate mobile number
+            const mobileNo = document.getElementById('mobile_no').value;
+            if (mobileNo === '' || !/^\d{10}$/.test(mobileNo)) {
+                document.getElementById('mobile_no_error').textContent = 'Valid Mobile Number is required.';
+                isValid = false;
+            }
+
+            // Validate email
+            const email = document.getElementById('email').value;
+            if (email === '' || !/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById('email_error').textContent = 'Valid Email ID is required.';
+                isValid = false;
+            }
+
+            // Validate address
+            const address = document.getElementById('address').value;
+            if (address === '') {
+                document.getElementById('address_error').textContent = 'Address is required.';
+                isValid = false;
+            }
+
+            // Validate city
+            const city = document.getElementById('city').value;
+            if (city === '') {
+                document.getElementById('city_error').textContent = 'City is required.';
+                isValid = false;
+            }
+
+            // Validate country
+            const country = document.getElementById('country').value;
+            if (country === '') {
+                document.getElementById('country_error').textContent = 'Country is required.';
+                isValid = false;
+            }
+
+            // Validate pincode
+            const pincode = document.getElementById('pincode').value;
+            if (pincode === '' || !/^\d{6}$/.test(pincode)) {
+                document.getElementById('pincode_error').textContent = 'Valid Pincode is required.';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</head>
+<body>
+
+<h2>Course Registration Form</h2>
+
+<form method="post" action="#" onsubmit="return validateForm()">
+    <table>
+        <tr>
+            <td><label for="student_name">Student Name:</label></td>
+            <td><input type="text" id="student_name" name="student_name">
+                <div id="name_error" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="rollno">Roll Number:</label></td>
+            <td><input type="text" id="rollno" name="rollno">
+                <div id="rollno_error" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Gender:</label></td>
+            <td>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+                <div id="gender_error" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="year">Year:</label></td>
+            <td><input type="text" id="year" name="year">
+                <div id="year_error" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="department">Department:</label></td>
+            <td><input type="text" id="department" name="department">
+                <div id="department_error" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="section">Section:</label></td>
+            <td><input type="text" id="section" name="section">
+                <div id="section_error" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="mobile_no">Mobile Number:</label></td>
+            <td><input type="text" id="mobile_no" name="mobile_no">
+                <div id="mobile_no_error" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="email">E-Mail ID:</label></td>
+            <td><input type="text" id="email" name="email">
+                <div id="email_error" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="address">Address:</label></td>
+            <td><textarea id="address" name="address" rows="4" cols="50"></textarea>
+                <div id="address_error" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="city">City:</label></td>
+            <td><input type="text" id="city" name="city">
+                <div id="city_error" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="country">Country:</label></td>
+            <td><input type="text" id="country" name="country">
+                <div id="country_error" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="pincode">Pincode:</label></td>
+            <td><input type="text" id="pincode" name="pincode">
+                <div id="pincode_error" class="error"></div>
+            </td>
+        </tr>
+        <tr>
+            <centre>
+            <td colspan="1">
+                <input type="submit" value="Submit Your Entries">
+                <input type="reset" value="Clear Your Entries">
+            </td>
+        </centre>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
