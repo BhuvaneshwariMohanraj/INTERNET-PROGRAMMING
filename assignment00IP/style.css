@@ -1,0 +1,62 @@
+.onenav {
+    background-color: rgb(202, 25, 108);
+    padding-left:14px ;
+    color: azure;
+}
+.a-head {
+    padding-inline: 10px;
+    color: azure;
+}
+.right-corner{
+    display: flex;
+    padding-left:1100px;
+}
+.wikipedia{
+    width: 95%;
+    height: 60vh; /* Make the iframe occupy the full viewport height */
+    overflow:hidden; /* Hide scroll bars, optional */
+    padding-right: 3px;
+    padding-left: 3px;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+.drawing-container {
+    text-align: center;
+    margin-top: 2px;
+    display: flex;
+    
+}
+.drawing-container h5 {
+    margin-top: 10px; /* Adjust spacing as needed */
+    text-align: center; /* Center-align text */
+    color: rgb(202, 25, 108); /* Text color */
+    padding-top: 50;
+    text-decoration: solid;
+}
+.svg-wrapper{
+    display: flex;
+    padding-left: 520px;
+}
+.svg-wrapper h5 {
+    margin-top: 10px; /* Adjust spacing as needed */
+    text-align: center; /* Center-align text */
+    color: rgb(202, 25, 108); /* Text color */
+    padding-top: 50;
+    text-decoration: solid;
+}
+footer {
+    background-color: azure;
+    color: azure;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 22%;
+}
+.service-center{
+    text-align: center;
+    padding-top: 23px;
+    color: rgb(202, 25, 108);
+}

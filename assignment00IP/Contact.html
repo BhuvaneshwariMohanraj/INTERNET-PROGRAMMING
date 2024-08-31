@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title>Contact Us Form</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f5f5f5;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+    
+            h1 {
+                color: #d63384;
+                margin-top: 20px;
+            }
+    
+            .form-container, .bmi-container {
+                width: 50%;
+                margin: 20px auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: left;
+            }
+    
+            .form-container h2, .bmi-container h2 {
+                color: #d63384;
+                font-size: 18px;
+            }
+    
+            .form-container p, .bmi-container p {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+    
+            .form-container label, .bmi-container label {
+                display: inline-block;
+                width: 150px;
+                text-align: right;
+                margin-right: 10px;
+            }
+    
+            .form-container input,
+            .form-container select,
+            .bmi-container input {
+                width: 60%;
+                padding: 5px;
+                margin-bottom: 10px;
+            }
+    
+            .form-container input[type="submit"],
+            .bmi-container input[type="submit"] {
+                width: auto;
+                background-color: #d63384;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                margin-left: 160px;
+            }
+    
+            .form-container input[type="submit"]:hover,
+            .bmi-container input[type="submit"]:hover {
+                background-color: #c82373;
+            }
+    
+            .bmi-container {
+                background-color: #d63384;
+                color: #fff;
+            }
+    
+            .bmi-container input, .bmi-container output {
+                color: #000;
+            }
+    
+            .bmi-result {
+                margin-left: 160px;
+            }
+        </style>
+    </head>
+    <body class="body-container">
+        <h1>CONTACT US</h1>
+        <div class="form-container">
+            <h2>Personal Information</h2>
+            <p>Help us to know you better and serve you with the best possibilities.</p>
+            <form>
+                <label for="firstName">First name:</label>
+                <input type="text" id="firstName" name="firstName" required><br>
+    
+                <label for="lastName">Last name:</label>
+                <input type="text" id="lastName" name="lastName" required><br>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+    
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required><br>
+    
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday" required><br>
+    
+                <label for="weight">Weight In Kgs:</label>
+                <input type="number" id="weight" name="weight" required><br>
+    
+                <label for="height">Height In cms:</label>
+                <input type="number" id="height" name="height" required><br>
+    
+                <label for="foodPreference">Food Preference:</label>
+                <select id="foodPreference" name="foodPreference" required>
+                    <option value="">Select an Option</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Eggetarian">Eggetarian</option>
+                </select><br>
+    
+                <label for="budget">Choose your budget:</label>
+                <input type="range" id="budget" name="budget" min="1" max="5"><br>
+    
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="bmi-container">
+            <h2>BMI</h2>
+            <p>Get to know your BMI</p>
+            <form oninput="calculateBMI()">
+                <label for="bmiWeight">Weight In Kgs:</label>
+                <input type="number" id="bmiWeight" name="bmiWeight" required><br>
+    
+                <label for="bmiHeight">Height In metres:</label>
+                <input type="number" id="bmiHeight" name="bmiHeight" step="0.01" required><br>
+    
+                <label>Your BMI:</label>
+                <output id="bmiResult">0</output><br>
+            </form>
+        </div>
+        <script>
+            function calculateBMI() {
+                var weight = parseFloat(document.getElementById("bmiWeight").value);
+                var height = parseFloat(document.getElementById("bmiHeight").value);
+    
+                if (weight > 0 && height > 0) {
+                    var bmi = weight / (height * height);
+                    document.getElementById("bmiResult").value = bmi.toFixed(2);
+                } else {
+                    document.getElementById("bmiResult").value = 0;
+                }
+            }
+        </script>
+    </body>
+</html>
