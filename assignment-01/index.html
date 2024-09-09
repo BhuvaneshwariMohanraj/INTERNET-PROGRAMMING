@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Task Manager</h1>
+</header>
+
+<main>
+    <div class="sidebar">
+        <ul>
+            <li><button id="filter-all">All</button></li>
+            <li><button id="filter-pending">Pending</button></li>
+            <li><button id="filter-completed">Completed</button></li>
+        </ul>
+    </div>
+
+    <section class="task-manager">
+        <!-- Task Form on the right-hand side -->
+        <div class="task-form">
+            <form id="task-form">
+                <input type="text" id="task-title" placeholder="Task Title" required>
+                <br><textarea id="task-desc" placeholder="Description" required></textarea>
+                <br><input type="date" id="task-due" required>
+                <br><button type="submit">Add Task</button>
+            </form>
+        </div>
+
+        <!-- Pending Task List -->
+        <div class="task-list pending">
+            <h2>Pending Tasks</h2>
+            <ul id="pending-tasks">
+                <!-- Pending tasks will be dynamically inserted here -->
+            </ul>
+        </div>
+
+        <!-- Completed Task List -->
+        <div class="task-list completed">
+            <h2>Completed Tasks</h2>
+            <ul id="completed-tasks">
+                <!-- Completed tasks will be dynamically inserted here -->
+            </ul>
+        </div>
+    </section>
+</main>
+
+
+<footer>
+    <p>© 2024 Task Manager. All rights reserved.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
