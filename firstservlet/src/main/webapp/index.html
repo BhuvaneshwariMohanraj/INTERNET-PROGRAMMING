@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration</title>
+</head>
+<body>
+    <h1>Course Registration Form</h1>
+    <form action="Servelt1" method="get">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="studentName" required><br><br>
+        
+        <label for="rollno">Roll Number:</label>
+        <input type="text" id="rollno" name="rollno" required><br><br>
+        
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+        
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" min="1" max="4" required><br><br>
+        
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required><br><br>
+        
+        <label for="section">Section:</label>
+        <input type="text" id="section" name="section" required><br><br>
+        
+        <label for="mobile_no">Mobile Number:</label>
+        <input type="tel" id="mobile_no" name="mobile_no" pattern="[0-9]{10}" required><br><br>
+        
+        <label for="email_id">E-Mail ID:</label>
+        <input type="email" id="email_id" name="email_id" required><br><br>
+        
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea><br><br>
+        
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" pattern="[a-z][A-Z]" required><br><br>
+        
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required><br><br>
+        
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" required><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
