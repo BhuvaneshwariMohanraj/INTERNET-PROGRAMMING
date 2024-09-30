@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Book Form</title>
+    <script>
+        function validateForm() {
+            let accno = document.forms["bookForm"]["accno"].value;
+            let title = document.forms["bookForm"]["title"].value;
+            let author = document.forms["bookForm"]["author"].value;
+            let publisher = document.forms["bookForm"]["publisher"].value;
+            let edition = document.forms["bookForm"]["edition"].value;
+            let price = document.forms["bookForm"]["price"].value;
+            let action = document.forms["bookForm"]["action"].value;
+
+            if (action === "insert" || action === "update") {
+                if (accno === "" || isNaN(accno) || parseInt(accno) <= 0) {
+                    alert("Accession number must be a valid positive number.");
+                    return false;
+                }
+                if (title === "") {
+                    alert("Book title must be filled out.");
+                    return false;
+                }
+                if (author === "") {
+                    alert("Author name must be filled out.");
+                    return false;
+                }
+                if (publisher === "") {
+                    alert("Publisher name must be filled out.");
+                    return false;
+                }
+                if (edition === "") {
+                    alert("Edition must be specified.");
+                    return false;
+                }
+                if (price === "" || isNaN(price) || parseFloat(price) <= 0) {
+                    alert("Please enter a valid price.");
+                    return false;
+                }
+            } else if (action === "delete" && (accno === "" || isNaN(accno))) {
+                alert("Accession number must be a valid number to delete a book.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Library Management System - Book Form</h2>
+    <form name="bookForm" action="Servlet21" method="POST" onsubmit="return validateForm()">
+        <label for="action">Choose an action:</label>
+        <select id="action" name="action">
+            <option value="insert">Insert</option>
+            <option value="update">Update</option>
+            <option value="delete">Delete</option>
+        </select><br><br>
+
+        <label for="accno">Accession Number (ACCNO):</label>
+        <input type="text" id="accno" name="accno"><br><br>
+
+        <label for="title">Book Title:</label>
+        <input type="text" id="title" name="title"><br><br>
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author"><br><br>
+
+        <label for="publisher">Publisher:</label>
+        <input type="text" id="publisher" name="publisher"><br><br>
+
+        <label for="edition">Edition:</label>
+        <input type="text" id="edition" name="edition"><br><br>
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
+
