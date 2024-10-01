@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest Example</title>
+    <script>
+        function showSuggestions(str) {
+             if (str.length === 0) {
+                document.getElementById("suggestions").innerHTML = "";
+                return;
+            }
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("suggestions").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "StudentSuggestionServlet?query=" + str, true);
+            xhttp.send();
+        }
+        function selectSuggestion(name) {
+            document.getElementById("studentName").value = name;
+            document.getElementById("suggestions").innerHTML = ""; // Clear the suggestions
+        }
+    </script>
+</head>
+<body>
+    <h2>Student Name Search</h2>
+    <form action="">
+        Enter student name: <input type="text" id="studentName" onkeyup="showSuggestions(this.value)">
+    </form>
+    <div id="suggestions"></div>
+</body>
+</html>
