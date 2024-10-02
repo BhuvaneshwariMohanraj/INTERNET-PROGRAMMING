@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>inventory</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        
+        <header id="head">
+            <a href="index.html">add product</a>
+            <a href="viewservlet">view products</a>
+            <a href="searching.html">search products</a>
+        </header>
+        <div class="formbox">
+           
+
+<form action="Product" method="get">
+            <label>Product id</label>
+            <input type="text" name="prodid">
+            <label>Product Name</label>
+            <input type="text"   name="prodname"> 
+            <label>Product Owner</label>
+            <input type="text"   name="prodowner">
+            <input type="submit" value="Submit" id="form-btn">
+        </form>
+        </div>
+        
+    </body>
+</html>
