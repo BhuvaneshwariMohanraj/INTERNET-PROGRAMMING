@@ -2,7 +2,7 @@
 @include 'config.php';
 
 if(isset($_POST['submit'])){
-    $id= mysqli_real_escape_string($conn, $_POST['id']);
+    
     $name= mysqli_real_escape_string($conn, $_POST['name']);
     $password= mysqli_real_escape_string($conn, $_POST['password']);
     $email= mysqli_real_escape_string($conn, $_POST['email']);
@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
     if(mysqli_num_rows($result)>0){
         $error[]= 'user already exist';
     }else{
-        $insert ="Insert into users(id,username,password,email) VALUES ('$id','$name','$password','$email'  )";
+        $insert ="Insert into users(username,password,email) VALUES ('$name','$password','$email'  )";
         mysqli_query($conn, $insert);
            header('location:Login.php');
     }
@@ -36,8 +36,8 @@ ini_set('display_errors', 1);
                     }
                 };
                 ?>
-                <label>User ID: </label>
-                <input type="int" id="id" name="id"><br><br>
+                <!--<label>User ID: </label>
+                <input type="int" id="id" name="id"><br><br>-->
                 <label>UserName: </label>
                 <input type="text" id="user" name="name"><br><br>
                 <label> Password: </label>
